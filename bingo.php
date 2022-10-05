@@ -106,6 +106,23 @@
 
         //------------------------------
     }
+    
+    // FunciónBombo
+    
+     
+function bola(){
+     
+    $bombo=rand(1,60);
+   $fueraBombo=array();             
+           
+        if (!in_array($bombo,$fueradelBombo)) { 
+               array_push($fueradelBombo,$bombo);
+             shuffle($bombo);
+        }
+    return $bombo;
+
+}
+ 
 
 $carton=array();
 $i=0;  
