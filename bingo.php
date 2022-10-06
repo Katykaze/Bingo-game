@@ -20,6 +20,8 @@
     imprimir($carton2);
     imprimir($carton3);
     $jugador1 = array($carton, $carton2, $carton3);
+    $bombo = bola();
+    tacharCarton($carton,$carton2,$carton3,$bombo);
 
 
     function carton()
@@ -64,7 +66,7 @@
                     for ($j = 0; $j < count($carton); $j++) {
                         if ($numero == $carton[$j]) {
                             $contador++;
-                            echo "<img src='./images/$numero.PNG'";
+                            echo "<img src='./images/images/$numero.PNG'";
                             echo "-----> contador $contador";
                             echo "</br>";
                         }
