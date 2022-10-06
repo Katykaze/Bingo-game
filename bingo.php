@@ -8,11 +8,6 @@
     <?php
 
 
-    /*$jugador2 = array($carton1,$carton2,$carton4);
-    $jugador3 = array($carton1,$carton2,$carton4);
-    $jugador4 = array($carton1,$carton2,$carton4);*/
-  
-    
     $carton = carton();
     $carton2  = carton();
     $carton3 = carton();
@@ -68,12 +63,8 @@
     function tacharCarton($carton, $bombo)
     {
         $contador = 0;
-        $cont = 0;
-            $numero = 0;
+        $numero= bola();
            
-                for ($i = 0; count($bombo)-$cont; $i++) {
-                    $cont++;    
-                    $numero = $bombo[$i];
                     for ($j = 0; $j < count($carton); $j++) {
                         if ($numero == $carton[$j]) {
                             $contador++;
@@ -82,17 +73,11 @@
                             echo "</br>";
                         }
                     }
-                }
-
-            
-           
-        
-
-
-        echo "Has ganado";
+                
+      echo "Has ganado";
     }
     //funcion bola
-    function bola()
+    function moverBombo()
     {
         $bombo = array();
         //$numero=0;
@@ -102,6 +87,14 @@
         }
         shuffle($bombo);
         return $bombo;
+    }
+    function bola($bombo){
+       
+        for ($i = 0; count($bombo) $i++) {
+              
+            $numero = $bombo[$i];
+        }
+        return $bola;
     }
 
 
