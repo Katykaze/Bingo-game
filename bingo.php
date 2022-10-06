@@ -8,13 +8,13 @@
     <?php
 
 
-    $carton = carton();
-    $carton2  = carton();
-    $carton3 = carton();
-    imprimir($carton);
-    imprimir($carton2);
-    imprimir($carton3);
-    $jugador1 = array($carton, $carton2, $carton3);
+    // $carton = carton();
+    // $carton2  = carton();
+    // $carton3 = carton();
+    // imprimir($carton);
+    // imprimir($carton2);
+    // imprimir($carton3);
+    // $jugador1 = array($carton, $carton2, $carton3);
     $carton4 = carton();
     $carton5  = carton();
     $carton6 = carton();
@@ -57,25 +57,24 @@
     
     echo count($bombo);
     print_r($bombo);
-    tacharCarton($carton, $bombo);
 
 
-    function tacharCarton($carton, $bombo)
-    {
-        $contador = 0;
-        $numero= bola();
+
+    // function tacharCarton($carton, $bola)
+    // {
+    //     $contador = 0;
            
-                    for ($j = 0; $j < count($carton); $j++) {
-                        if ($numero == $carton[$j]) {
-                            $contador++;
-                            echo "<img src='./images/images/$numero.PNG'";
-                            echo "-----> contador $contador";
-                            echo "</br>";
-                        }
-                    }
+    //                 for ($j = 0; $j < count($carton); $j++) {
+    //                     if ($numero == $carton[$j]) {
+    //                         $contador++;
+    //                         echo "<img src='./images/images/$numero.PNG'";
+    //                         echo "-----> contador $contador";
+    //                         echo "</br>";
+    //                     }
+    //                 }
                 
-      echo "Has ganado";
-    }
+    //   echo "Has ganado";
+    // }
     //funcion bola
     function moverBombo()
     {
@@ -88,16 +87,70 @@
         shuffle($bombo);
         return $bombo;
     }
-    function bola($bombo){
+
+    
+
+    // 
+    function bola($bombo,$posicion){
        
-        for ($i = 0; count($bombo) $i++) {
-              
-            $numero = $bombo[$i];
-        }
+        $bola = $bombo[$posicion];
+        
         return $bola;
     }
 
 
+
+    function tachar($carton1 , $carton2 , $carton3 ,$bola){
+
+
+
+
+
+    }
+
+    $carton = carton();
+    $carton2  = carton();
+    $carton3 = carton();
+    imprimir($carton);
+    imprimir($carton2);
+    imprimir($carton3);
+    $jugador1 = array($carton, $carton2, $carton3);
+
+
+    function jugar($jugador1,$bola){
+            $jugador = $jugador1;
+            for ($i=0; $i < count($jugador) ; $i++) { 
+                $var1 = $jugador[$i];
+                $var2  = $jugador[$i];
+                $var3  = $jugador[$i];          
+             }
+                $cont1= 0;
+                $cont2= 0;
+                $cont3= 0;
+                for ($j=0; $j < count($var1); $j++) { 
+                    if($var1[$j] == $bola)
+                    $cont1 ++;
+                }
+                for ($j=0; $j < count($var2); $j++) { 
+                    if($var2[$j] == $bola)
+                    $cont2 ++;
+                }
+                for ($j=0; $j < count($var3); $j++) { 
+                    if($var3[$j] == $bola)
+                    $cont3 ++;
+                }
+                
+                if($cont1 == 15) return "j1c1";
+                if($cont2 == 15) return "j1c2";
+                if($cont3 == 15) return "j1c3";
+
+        // $bombo=moverBombo();
+        // for ($i=0; $i < count($bombo); $i++) { 
+        //          $bola = bola($bombo,$i);
+        //     tachar($carton , $carton2 , $carton3 ,$bola);
+        //  }
+
+    }
 
 
     ?>
