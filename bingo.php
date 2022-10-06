@@ -63,7 +63,7 @@
                     for ($j = 0; $j < count($carton); $j++) {
                         if ($numero == $carton[$j]) {
                             $contador++;
-                            echo "<img  src= 'images\$numero.png'>";
+                            echo "<img src='./images/$numero.PNG'";
                             echo "-----> contador $contador";
                             echo "</br>";
                         }
