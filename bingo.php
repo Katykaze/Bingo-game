@@ -20,7 +20,20 @@
     imprimir($carton2);
     imprimir($carton3);
     $jugador1 = array($carton, $carton2, $carton3);
-
+    $carton4 = carton();
+    $carton5  = carton();
+    $carton6 = carton();
+    imprimir($carton4);
+    imprimir($carton5);
+    imprimir($carton6);
+    $jugador2 = array($carton4, $carton5, $carton6);
+    $carton7 = carton();
+    $carton8  = carton();
+    $carton9 = carton();
+    imprimir($carton7);
+    imprimir($carton8);
+    imprimir($carton9);
+    $jugador3 = array($carton7, $carton8, $carton9);
 
     function carton()
     {
