@@ -11,16 +11,14 @@
     /*$jugador2 = array($carton1,$carton2,$carton4);
     $jugador3 = array($carton1,$carton2,$carton4);
     $jugador4 = array($carton1,$carton2,$carton4);*/
-    $carton1 = carton();
-    $carton2 = carton();
-    $carton3 = carton();
-    $jugador1 = array($carton1, $carton2, $carton3);
-
-
+  
+    $jugador1 = array($carton, $carton2, $carton3);
     $carton = carton();
-    //imprimir($carton1);
-    //imprimir($carton2);
-    //imprimir($carton3);
+    $carton2  = carton();
+    $carton3 = carton();
+    imprimir($carton);
+    imprimir($carton2);
+    imprimir($carton3);
 
 
     function carton()
@@ -46,8 +44,8 @@
         printf("<br>");
     }
     //funcion para tachar
-    imprimir($carton);
-    $bombo = bola();
+    
+    
     echo count($bombo);
     print_r($bombo);
     tacharCarton($carton, $bombo);
@@ -65,7 +63,7 @@
                     for ($j = 0; $j < count($carton); $j++) {
                         if ($numero == $carton[$j]) {
                             $contador++;
-                            echo $numero . " ";
+                            echo "<img  src= 'images\$numero.png'>";
                             echo "-----> contador $contador";
                             echo "</br>";
                         }
