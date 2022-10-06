@@ -12,13 +12,14 @@
     $jugador3 = array($carton1,$carton2,$carton4);
     $jugador4 = array($carton1,$carton2,$carton4);*/
   
-    $jugador1 = array($carton, $carton2, $carton3);
+    
     $carton = carton();
     $carton2  = carton();
     $carton3 = carton();
     imprimir($carton);
     imprimir($carton2);
     imprimir($carton3);
+    $jugador1 = array($carton, $carton2, $carton3);
 
 
     function carton()
