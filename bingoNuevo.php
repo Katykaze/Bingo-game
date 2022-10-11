@@ -15,6 +15,9 @@ function crearJugador()
     //array de jugador, donde cada uno de ellos tendra 3 cartones, llamando a la funcion crearCarton()
     $jugador = array();
     array_push($jugador, crearCarton(), crearCarton(), crearCarton());
+    echo "----------------------cartones------------------- </br>";
+   imprimirCartones($jugador);
+  
     return $jugador;
 }
 
@@ -41,7 +44,7 @@ function ganador($jugador, $bolas)
             }
         }
         if ($cont == 15) {
-            echo "el carton ganador es $i </br>";
+            echo "<br> el carton ganador es $i </br>";
             echo " <br>";
             return true;
         }
@@ -78,20 +81,14 @@ function jugar()
     } while ($ganador == -1);
     echo "Ha ganado jugador $ganador </br>";
     echo "en $pos jugadas </br>";
-    imprimir($bolas);
+    echo "El bombo es el siguiente : ";
     echo "</br>";
-    //
+    imprimirBolas($bolas);
+    echo "</br>";
     echo "los cartones del ganador son </br>";
-    //print_r($jugadores[$ganador]);
     imprimirCartones($jugadores[$ganador]);
 }
 //----------------funciones para imprimir
-function imprimir($arr)
-{
-    for ($i = 0; $i < count($arr); $i++) {
-        echo $arr[$i] . " ";
-    }
-}
 
 function imprimirCartones($arr)
 {
@@ -102,6 +99,14 @@ function imprimirCartones($arr)
         }
         echo "</br>";
     }
+}
+function imprimirBolas($bolas){
+    for ($i = 0; $i < count($bolas); $i++) {
+        $numero= $bolas[$i];
+        echo "<img src='./images/$numero.PNG'>";
+
+    }
+
 }
 
 ?>
