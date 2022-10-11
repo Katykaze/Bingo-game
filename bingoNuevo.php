@@ -80,7 +80,7 @@ function jugar()
         $pos++;
     } while ($ganador == -1);
     echo "Ha ganado jugador $ganador </br>";
-    echo "en $pos jugadas </br>";
+    echo "en ". ($pos-1). "jugadas </br>"; //tenemos que restar -1 ya que empieza en cero el array de bolas, por lo que si sale 54 es la posicion anterior
     echo "El bombo es el siguiente : ";
     echo "</br>";
     imprimirBolas($bolas);
