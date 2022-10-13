@@ -15,8 +15,8 @@ function crearJugador()
     //array de jugador, donde cada uno de ellos tendra 3 cartones, llamando a la funcion crearCarton()
     $jugador = array();
     array_push($jugador, crearCarton(), crearCarton(), crearCarton());
-    echo "----------------------cartones------------------- </br>";
-   imprimirCartones($jugador);
+    //echo "----------------------cartones------------------- </br>";
+   //imprimirCartones($jugador);
   
     return $jugador;
 }
@@ -61,7 +61,7 @@ function juegoTerminado($jugadores, $bolas, $pos)
         //por ejempl de 0 a 15 y comprueba los cartones de todos los jugadores con ese rango
         if (ganador($jugadores[$i], array_slice($bolas, 0, $pos))) {
             //si esta en 15 va de 0 a 15
-            echo $i;
+            //echo $i;
             echo "<br />";
             return $i; //nos devuelve el carton
         }
@@ -80,26 +80,20 @@ function jugar()
         $pos++;
     } while ($ganador == -1);
     echo "Ha ganado jugador $ganador </br>";
-    echo "en ". ($pos-1). "jugadas </br>"; //tenemos que restar -1 ya que empieza en cero el array de bolas, por lo que si sale 54 es la posicion anterior
-    echo "El bombo es el siguiente : ";
     echo "</br>";
+    //mostrarCartones($jugadores[$ganador]);
+    echo "</br>";
+    echo "en ". ($pos-1). "jugadas </br>"; //tenemos que restar -1 ya que empieza en cero el array de bolas, por lo que si sale 54 es la posicion anterior
+    echo "</br>";
+    echo "El bombo es el siguiente : ";
     imprimirBolas($bolas);
     echo "</br>";
-    echo "los cartones del ganador son </br>";
-    imprimirCartones($jugadores[$ganador]);
+    mostrarCartones($jugadores,3);
+       
+    
 }
 //----------------funciones para imprimir
 
-function imprimirCartones($arr)
-{
-    for ($i = 0; $i < count($arr); $i++) {
-        for ($j = 0; $j < count($arr[$i]); $j++) {
-            echo $arr[$i][$j] . " ";
-            
-        }
-        echo "</br>";
-    }
-}
 function imprimirBolas($bolas){
     for ($i = 0; $i < count($bolas); $i++) {
         $numero= $bolas[$i];
@@ -108,5 +102,46 @@ function imprimirBolas($bolas){
     }
 
 }
+function mostrarCartones($jugadores,$numCartones){
+   
+   
+    for($i=0;$i<count($jugadores);$i++){
+        echo " Jugador" .$i."<br>";
+        echo "<table>"; //border='2' cellspacing='10'
+         echo "<tr>";
+        for($j=0;$j<$numCartones;$j++){
+            echo "<td>";
+            echo   " Carton numero $j";
+            echo "<table border='2' cellspacing='5'>";
+           $carton =$jugadores[$i][$j];
+           echo "<tr>";
+           $arr_espac1[0]= random_int(0,2);
+           $arr_espac1[1]=random_int(3,4);
+           $contador=0;
+            for($k=0;$k<count($carton);$k++){
+               
+                if($k%5==0){
+                $arr_espac1[0]= random_int(0,2)+$contador;
+                $arr_espac1[1]= random_int(3,4)+$contador;    
+                $contador+=5;
 
-?>
+                echo "</tr><tr>";
+                }
+                echo "<td style= padding:5px;width:150px;> $carton[$k]</td>";
+                 if($k== $arr_espac1[0] || $k== $arr_espac1[1]){
+                     echo "<td style='background: black;'>&nbsp;</td>";
+                 }
+               
+            }
+            echo "</tr>";
+            echo "</table>";
+            echo "</td>";
+         }
+
+         echo "</tr>";
+         echo "</table>";
+
+    }
+   
+
+}
