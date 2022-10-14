@@ -127,9 +127,9 @@ function mostrarCartones($jugadores,$numCartones){
 
                 echo "</tr><tr>";
                 }
-                echo "<td style= padding:5px;width:150px;> $carton[$k]</td>";
+                echo "<td style='width:150px';> $carton[$k]</td>";
                  if($k== $arr_espac1[0] || $k== $arr_espac1[1]){
-                     echo "<td style='background: black;'>&nbsp;</td>";
+                     echo "<td style='width:150px;background-color: black;'>&nbsp;</td>";
                  }
                
             }
